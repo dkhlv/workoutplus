@@ -11,8 +11,10 @@
 		DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0D243AC22D003DE33C /* SceneDelegate.swift */; };
 		DA575A10243AC22D003DE33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0F243AC22D003DE33C /* ViewController.swift */; };
 		DA575A13243AC22D003DE33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA575A11243AC22D003DE33C /* Main.storyboard */; };
-		DA575A15243AC235003DE33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA575A14243AC235003DE33C /* Assets.xcassets */; };
 		DA575A18243AC235003DE33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA575A16243AC235003DE33C /* LaunchScreen.storyboard */; };
+		DA575A24243AD073003DE33C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */; };
+		DA575A26243AD303003DE33C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */; };
+		DA575A28243AD573003DE33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA575A27243AD573003DE33C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +23,11 @@
 		DA575A0D243AC22D003DE33C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DA575A0F243AC22D003DE33C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA575A12243AC22D003DE33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA575A14243AC235003DE33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA575A17243AC235003DE33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA575A19243AC235003DE33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		DA575A27243AD573003DE33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,10 @@
 				DA575A0D243AC22D003DE33C /* SceneDelegate.swift */,
 				DA575A0F243AC22D003DE33C /* ViewController.swift */,
 				DA575A11243AC22D003DE33C /* Main.storyboard */,
-				DA575A14243AC235003DE33C /* Assets.xcassets */,
+				DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */,
+				DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */,
 				DA575A16243AC235003DE33C /* LaunchScreen.storyboard */,
+				DA575A27243AD573003DE33C /* Assets.xcassets */,
 				DA575A19243AC235003DE33C /* Info.plist */,
 			);
 			path = workoutplus;
@@ -126,7 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA575A18243AC235003DE33C /* LaunchScreen.storyboard in Resources */,
-				DA575A15243AC235003DE33C /* Assets.xcassets in Resources */,
+				DA575A28243AD573003DE33C /* Assets.xcassets in Resources */,
 				DA575A13243AC22D003DE33C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA575A26243AD303003DE33C /* CategoryTableViewCell.swift in Sources */,
 				DA575A10243AC22D003DE33C /* ViewController.swift in Sources */,
 				DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */,
 				DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */,
+				DA575A24243AD073003DE33C /* CategoriesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.diana.koval.workoutplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.diana.koval.workoutplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
