@@ -13,7 +13,7 @@ class CategoriesTableViewController: UITableViewController {
     var categories: [String]?
 
     override func viewDidLoad() {
-        self.categories = ["Upper Body", "Lower Body", "Full Body"]
+        self.categories = ["Upper Body Strength", "Core & Legs", "Full Body Workout"]
 //        super.viewDidLoad()
         
     }
@@ -31,6 +31,7 @@ class CategoriesTableViewController: UITableViewController {
         if let category = categories?[indexPath.row] {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryTableViewCell {
                 cell.workoutTypeLabel.text = category
+                cell.categoryImage.image = UIImage(named: "category" + String(indexPath.row+1))
                 return cell
             }
         }

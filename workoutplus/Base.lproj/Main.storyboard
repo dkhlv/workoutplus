@@ -10,45 +10,83 @@
         <!--Progress-->
         <scene sceneID="i8v-7O-B6L">
             <objects>
-                <viewController id="aNB-4n-TwI" sceneMemberID="viewController">
+                <viewController id="aNB-4n-TwI" customClass="ProgressViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JDK-lG-KDG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5Q-5E-Tla">
+                                <rect key="frame" x="147" y="78" width="121" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Up2-Ld-T1r">
+                                <rect key="frame" x="37" y="160" width="121" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-rf-jhL">
+                                <rect key="frame" x="181" y="160" width="121" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iYu-Ze-FPN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="Cuh-4C-wos"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="person.fill" catalog="system" id="Cuh-4C-wos"/>
+                    <navigationItem key="navigationItem" id="tmn-uh-nno"/>
+                    <connections>
+                        <outlet property="numberWorkoutsLabel" destination="Up2-Ld-T1r" id="kBh-iI-hP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4W-hx-7HW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="532"/>
+            <point key="canvasLocation" x="1002.8985507246377" y="531.69642857142856"/>
         </scene>
         <!--My Workouts-->
         <scene sceneID="cB7-41-VzJ">
             <objects>
                 <tableViewController id="vai-Uy-I44" customClass="CategoriesTableViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IT6-1P-NtA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IT6-1P-NtA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" id="NyR-Gy-AKS" customClass="CategoryTableViewCell" customModule="workoutplus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="250" id="NyR-Gy-AKS" customClass="CategoryTableViewCell" customModule="workoutplus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NyR-Gy-AKS" id="N8P-FU-XpT">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THJ-HR-HeG">
-                                            <rect key="frame" x="20" y="11" width="335" height="21"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category1" translatesAutoresizingMaskIntoConstraints="NO" id="lzd-cW-mPn">
+                                            <rect key="frame" x="3" y="3" width="408" height="244"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THJ-HR-HeG">
+                                            <rect key="frame" x="20" y="199" width="335" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lzd-cW-mPn" secondAttribute="trailing" constant="3" id="13P-ds-KfZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="lzd-cW-mPn" secondAttribute="bottom" constant="3" id="8up-hC-Cxm"/>
+                                        <constraint firstItem="lzd-cW-mPn" firstAttribute="leading" secondItem="N8P-FU-XpT" secondAttribute="leading" constant="3" id="Inm-mS-Ndn"/>
+                                        <constraint firstItem="lzd-cW-mPn" firstAttribute="top" secondItem="N8P-FU-XpT" secondAttribute="top" constant="3" id="kDX-Jq-rZF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="categoryImage" destination="lzd-cW-mPn" id="Jrn-V2-Aug"/>
                                     <outlet property="workoutTypeLabel" destination="THJ-HR-HeG" id="dD4-3W-JAc"/>
                                     <segue destination="pTR-5o-UbK" kind="show" id="chB-9T-dUu"/>
                                 </connections>
@@ -73,6 +111,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FEG-hY-SQg">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Mark Completed"/>
+                            <connections>
+                                <action selector="markCompletedPressed:" destination="pTR-5o-UbK" eventType="touchUpInside" id="Q0E-VC-pBx"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ExerciseCell" id="Cdb-AY-lZs" customClass="ExerciseTableViewCell" customModule="workoutplus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -140,9 +186,12 @@
         <scene sceneID="E49-jH-2Qb">
             <objects>
                 <navigationController id="7B7-cN-63P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workouts" id="k4n-um-te6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kvb-9f-E1R">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <tabBarItem key="tabBarItem" title="Workouts" image="icons8-barbell-50" id="k4n-um-te6">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="7"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kvb-9f-E1R">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -172,4 +221,9 @@
             <point key="canvasLocation" x="43" y="204"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="category1" width="4933" height="3289"/>
+        <image name="icons8-barbell-50" width="50" height="50"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

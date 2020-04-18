@@ -18,6 +18,11 @@ class ExerciseTableViewController: UITableViewController {
 
     }
 
+    @IBAction func markCompletedPressed(_ sender: UIButton) {
+        print("Workout completed!")
+
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,6 +86,5 @@ class ExerciseTableViewController: UITableViewController {
             }
         }
     }
-
     
 }

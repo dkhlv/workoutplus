@@ -12,5 +12,7 @@ class CategoryTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var workoutTypeLabel: UILabel!
+    @IBOutlet weak var categoryImage: UIImageView!
+    
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */; };
 		DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0B243AC22D003DE33C /* AppDelegate.swift */; };
 		DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0D243AC22D003DE33C /* SceneDelegate.swift */; };
 		DA575A13243AC22D003DE33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA575A11243AC22D003DE33C /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		DA575A08243AC22D003DE33C /* workoutplus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutplus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA575A0B243AC22D003DE33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA575A0D243AC22D003DE33C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,15 +74,13 @@
 		DA575A0A243AC22D003DE33C /* workoutplus */ = {
 			isa = PBXGroup;
 			children = (
+				DA7767442447E0E6001D3DEE /* Controller */,
+				DA7767432447E0E0001D3DEE /* View */,
+				DA7767412447E0C6001D3DEE /* Model */,
 				DA575A0B243AC22D003DE33C /* AppDelegate.swift */,
 				DA575A0D243AC22D003DE33C /* SceneDelegate.swift */,
 				DA575A11243AC22D003DE33C /* Main.storyboard */,
 				DA575A2B243D584D003DE33C /* SwiftyJSON.swift */,
-				DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */,
-				DA575A35243D68D2003DE33C /* ExerciseTableViewCell.swift */,
-				DA575A29243D57A1003DE33C /* ExerciseTableViewController.swift */,
-				DA575A33243D5E8E003DE33C /* Exercise.swift */,
-				DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */,
 				DA575A16243AC235003DE33C /* LaunchScreen.storyboard */,
 				DA575A31243D58B6003DE33C /* upperBodyData.json */,
 				DA575A2D243D58A7003DE33C /* fullBodyData.json */,
@@ -89,6 +89,33 @@
 				DA575A19243AC235003DE33C /* Info.plist */,
 			);
 			path = workoutplus;
+			sourceTree = "<group>";
+		};
+		DA7767412447E0C6001D3DEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA575A33243D5E8E003DE33C /* Exercise.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA7767432447E0E0001D3DEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA575A35243D68D2003DE33C /* ExerciseTableViewCell.swift */,
+				DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA7767442447E0E6001D3DEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */,
+				DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */,
+				DA575A29243D57A1003DE33C /* ExerciseTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +198,7 @@
 				DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */,
 				DA575A24243AD073003DE33C /* CategoriesTableViewController.swift in Sources */,
 				DA575A36243D68D2003DE33C /* ExerciseTableViewCell.swift in Sources */,
+				DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */,
 				DA575A2C243D584D003DE33C /* SwiftyJSON.swift in Sources */,
 				DA575A2A243D57A1003DE33C /* ExerciseTableViewController.swift in Sources */,
 			);
