@@ -1,5 +1,5 @@
 //
-//  ExerciseTableViewCell.swift
+//  ExerciseCell.swift
 //  workoutplus
 //
 //  Created by Diana Koval on 2020-04-07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciseTableViewCell: UITableViewCell {
+class ExerciseCell: UITableViewCell {
 
     @IBOutlet weak var exerciseNameLabel: UILabel!
     override func awakeFromNib() {

@@ -1,0 +1,180 @@
+﻿{
+  "category1": {
+    "category_name": "Upper Body Strength",
+    "duration": "30min",
+    "calories": "150cal",
+    "image": "category1",
+    "exercises": [
+      {
+        "name": "Bench Press (machine)",
+        "category": "Gym",
+        "sets": "3",
+        "reps": "10",
+        "weight": "40 lbs"
+      },
+      {
+        "name": "DB Chest Flys",
+        "category": "Exercise Ball",
+        "sets": "3",
+        "reps": "10",
+        "weight": "10 lbs"
+      },
+      {
+        "name": "Lat Pulldowns (reverse grip)",
+        "category": "Gym",
+        "sets": "3",
+        "reps": "10",
+        "weight": "40 lbs"
+      },
+      {
+        "name": "Row 1 Arm in Lunge",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "10",
+        "weight": "15 lbs"
+      },
+      {
+        "name": "Hammer Curls",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "15",
+        "weight": "10 lbs"
+      },
+      {
+        "name": "French Press in Bridge",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "10",
+        "weight": "8 lbs"
+      },
+      {
+        "name": "Upright Row",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "10",
+        "weight": "8 lbs"
+      },
+      {
+        "name": "Elbow Plank to Straight Arm Plank",
+        "category": "No Equipment",
+        "sets": "3",
+        "reps": "5",
+        "weight": "0 lbs"
+      }
+    ]
+  },
+  "category2": {
+    "category_name": "Core & Legs",
+    "duration": "30min",
+    "calories": "100cal",
+    "image": "category2",
+    "exercises": [
+      {
+        "name": "Squat and Shoulder Press",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "10",
+        "weight": "10 lbs"
+      },
+      {
+        "name": "Hamstring curls (machine, seated)",
+        "category": "Gym",
+        "sets": "3",
+        "reps": "10",
+        "weight": "50 lbs"
+      },
+      {
+        "name": "Stationary Lunges",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "15",
+        "weight": "10 lbs"
+      },
+      {
+        "name": "Lateral Shoulder Raises",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "15",
+        "weight": "5 lbs"
+      },
+      {
+        "name": "Rainbows in Half Squat",
+        "category": "No Equipment",
+        "sets": "3",
+        "reps": "20",
+        "weight": "0 lbs"
+      },
+      {
+        "name": "Rotator 1 Wall Bent Elbows",
+        "category": "No Equipment",
+        "sets": "3",
+        "reps": "15",
+        "weight": "0 lbs"
+      }
+    ]
+  },
+  "category3": {
+    "category_name": "Full Body Workout",
+    "duration": "45min",
+    "calories": "220cal",
+    "image": "category3",
+    "exercises": [
+      {
+        "name": "Squat and Bicep Curl",
+        "category": "Exercise Ball",
+        "sets": "3",
+        "reps": "10",
+        "weight": "10 lbs"
+      },
+      {
+        "name": "Crunch on Ball",
+        "category": "Exercise Ball",
+        "sets": "3",
+        "reps": "25",
+        "weight": "0 lbs"
+      },
+      {
+        "name": "Cable Back Row High Pully",
+        "category": "Gym",
+        "sets": "3",
+        "reps": "15",
+        "weight": "40 lbs"
+      },
+      {
+        "name": "Cable Tricep Pushdowns (rope)",
+        "category": "Gym",
+        "sets": "3",
+        "reps": "20",
+        "weight": "30 lbs"
+      },
+      {
+        "name": "Tricep Pushback (Reverse)",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "20",
+        "weight": "8 lbs"
+      },
+      {
+        "name": "Crunch w/ 1 Arm Across Body",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "15",
+        "weight": "10 lbs"
+      },
+      {
+        "name": "Bridge Hold",
+        "category": "No Equipment",
+        "sets": "3",
+        "reps": "10",
+        "weight": "0 lbs"
+      },
+      {
+        "name": "21 HammerCurls",
+        "category": "Dumbbells",
+        "sets": "3",
+        "reps": "21",
+        "weight": "8 lbs"
+      }
+    ]
+  }
+}

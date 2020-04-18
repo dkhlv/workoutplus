@@ -12,16 +12,17 @@
 		DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0D243AC22D003DE33C /* SceneDelegate.swift */; };
 		DA575A13243AC22D003DE33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA575A11243AC22D003DE33C /* Main.storyboard */; };
 		DA575A18243AC235003DE33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA575A16243AC235003DE33C /* LaunchScreen.storyboard */; };
-		DA575A24243AD073003DE33C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */; };
-		DA575A26243AD303003DE33C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */; };
+		DA575A24243AD073003DE33C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A23243AD073003DE33C /* CategoryViewController.swift */; };
+		DA575A26243AD303003DE33C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A25243AD303003DE33C /* CategoryCell.swift */; };
 		DA575A28243AD573003DE33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA575A27243AD573003DE33C /* Assets.xcassets */; };
-		DA575A2A243D57A1003DE33C /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A29243D57A1003DE33C /* ExerciseTableViewController.swift */; };
+		DA575A2A243D57A1003DE33C /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A29243D57A1003DE33C /* ExerciseViewController.swift */; };
 		DA575A2C243D584D003DE33C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A2B243D584D003DE33C /* SwiftyJSON.swift */; };
 		DA575A2E243D58A7003DE33C /* fullBodyData.json in Resources */ = {isa = PBXBuildFile; fileRef = DA575A2D243D58A7003DE33C /* fullBodyData.json */; };
 		DA575A30243D58AE003DE33C /* legsData.json in Resources */ = {isa = PBXBuildFile; fileRef = DA575A2F243D58AE003DE33C /* legsData.json */; };
 		DA575A32243D58B6003DE33C /* upperBodyData.json in Resources */ = {isa = PBXBuildFile; fileRef = DA575A31243D58B6003DE33C /* upperBodyData.json */; };
 		DA575A34243D5E8E003DE33C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A33243D5E8E003DE33C /* Exercise.swift */; };
-		DA575A36243D68D2003DE33C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A35243D68D2003DE33C /* ExerciseTableViewCell.swift */; };
+		DA575A36243D68D2003DE33C /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A35243D68D2003DE33C /* ExerciseCell.swift */; };
+		DA864F8A244A9DFB002E3B2C /* workout_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DA864F89244A9DFB002E3B2C /* workout_data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,16 +33,17 @@
 		DA575A12243AC22D003DE33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA575A17243AC235003DE33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA575A19243AC235003DE33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
-		DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		DA575A23243AD073003DE33C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		DA575A25243AD303003DE33C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		DA575A27243AD573003DE33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA575A29243D57A1003DE33C /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
+		DA575A29243D57A1003DE33C /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		DA575A2B243D584D003DE33C /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		DA575A2D243D58A7003DE33C /* fullBodyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fullBodyData.json; sourceTree = "<group>"; };
 		DA575A2F243D58AE003DE33C /* legsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = legsData.json; sourceTree = "<group>"; };
 		DA575A31243D58B6003DE33C /* upperBodyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = upperBodyData.json; sourceTree = "<group>"; };
 		DA575A33243D5E8E003DE33C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		DA575A35243D68D2003DE33C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		DA575A35243D68D2003DE33C /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		DA864F89244A9DFB002E3B2C /* workout_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workout_data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				DA575A31243D58B6003DE33C /* upperBodyData.json */,
 				DA575A2D243D58A7003DE33C /* fullBodyData.json */,
 				DA575A2F243D58AE003DE33C /* legsData.json */,
+				DA864F89244A9DFB002E3B2C /* workout_data.json */,
 				DA575A27243AD573003DE33C /* Assets.xcassets */,
 				DA575A19243AC235003DE33C /* Info.plist */,
 			);
@@ -102,8 +105,8 @@
 		DA7767432447E0E0001D3DEE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DA575A35243D68D2003DE33C /* ExerciseTableViewCell.swift */,
-				DA575A25243AD303003DE33C /* CategoryTableViewCell.swift */,
+				DA575A35243D68D2003DE33C /* ExerciseCell.swift */,
+				DA575A25243AD303003DE33C /* CategoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */,
-				DA575A23243AD073003DE33C /* CategoriesTableViewController.swift */,
-				DA575A29243D57A1003DE33C /* ExerciseTableViewController.swift */,
+				DA575A23243AD073003DE33C /* CategoryViewController.swift */,
+				DA575A29243D57A1003DE33C /* ExerciseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA575A2E243D58A7003DE33C /* fullBodyData.json in Resources */,
+				DA864F8A244A9DFB002E3B2C /* workout_data.json in Resources */,
 				DA575A30243D58AE003DE33C /* legsData.json in Resources */,
 				DA575A18243AC235003DE33C /* LaunchScreen.storyboard in Resources */,
 				DA575A28243AD573003DE33C /* Assets.xcassets in Resources */,
@@ -192,15 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA575A26243AD303003DE33C /* CategoryTableViewCell.swift in Sources */,
+				DA575A26243AD303003DE33C /* CategoryCell.swift in Sources */,
 				DA575A34243D5E8E003DE33C /* Exercise.swift in Sources */,
 				DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */,
 				DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */,
-				DA575A24243AD073003DE33C /* CategoriesTableViewController.swift in Sources */,
-				DA575A36243D68D2003DE33C /* ExerciseTableViewCell.swift in Sources */,
+				DA575A24243AD073003DE33C /* CategoryViewController.swift in Sources */,
+				DA575A36243D68D2003DE33C /* ExerciseCell.swift in Sources */,
 				DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */,
 				DA575A2C243D584D003DE33C /* SwiftyJSON.swift in Sources */,
-				DA575A2A243D57A1003DE33C /* ExerciseTableViewController.swift in Sources */,
+				DA575A2A243D57A1003DE33C /* ExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

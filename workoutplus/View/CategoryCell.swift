@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  CategoryCell.swift
 //  workoutplus
 //
 //  Created by Diana Koval on 2020-04-05.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
-
+class CategoryCell: UITableViewCell {
 
     @IBOutlet weak var workoutTypeLabel: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
-    
     
 }

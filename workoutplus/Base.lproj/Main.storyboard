@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Progress-->
+        <!--Profile-->
         <scene sceneID="i8v-7O-B6L">
             <objects>
                 <viewController id="aNB-4n-TwI" customClass="ProgressViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iYu-Ze-FPN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" image="person.fill" catalog="system" id="Cuh-4C-wos"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Cuh-4C-wos"/>
                     <navigationItem key="navigationItem" id="tmn-uh-nno"/>
                     <connections>
                         <outlet property="numberWorkoutsLabel" destination="Up2-Ld-T1r" id="kBh-iI-hP0"/>
@@ -53,13 +53,13 @@
         <!--My Workouts-->
         <scene sceneID="cB7-41-VzJ">
             <objects>
-                <tableViewController id="vai-Uy-I44" customClass="CategoriesTableViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vai-Uy-I44" customClass="CategoryViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IT6-1P-NtA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="250" id="NyR-Gy-AKS" customClass="CategoryTableViewCell" customModule="workoutplus" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="250" id="NyR-Gy-AKS" customClass="CategoryCell" customModule="workoutplus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NyR-Gy-AKS" id="N8P-FU-XpT">
@@ -103,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="-155.35714285714286"/>
         </scene>
-        <!--Exercise Table View Controller-->
+        <!--Exercise View Controller-->
         <scene sceneID="uO6-fK-nzW">
             <objects>
-                <tableViewController id="pTR-5o-UbK" customClass="ExerciseTableViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pTR-5o-UbK" customClass="ExerciseViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U1D-yW-sNe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ExerciseCell" id="Cdb-AY-lZs" customClass="ExerciseTableViewCell" customModule="workoutplus" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ExerciseCell" id="Cdb-AY-lZs" customClass="ExerciseCell" customModule="workoutplus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cdb-AY-lZs" id="YCs-7A-edh">
@@ -187,7 +187,7 @@
             <objects>
                 <navigationController id="7B7-cN-63P" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workouts" image="icons8-barbell-50" id="k4n-um-te6">
-                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="7"/>
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kvb-9f-E1R">
@@ -224,6 +224,6 @@
     <resources>
         <image name="category1" width="4933" height="3289"/>
         <image name="icons8-barbell-50" width="50" height="50"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>
