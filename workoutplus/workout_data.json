@@ -1,7 +1,7 @@
-﻿{
+{
   "category1": {
     "category_name": "Upper Body Strength",
-    "duration": "30min",
+    "duration": "30",
     "calories": "150cal",
     "image": "category1",
     "exercises": [
@@ -65,7 +65,7 @@
   },
   "category2": {
     "category_name": "Core & Legs",
-    "duration": "30min",
+    "duration": "30",
     "calories": "100cal",
     "image": "category2",
     "exercises": [
@@ -115,7 +115,7 @@
   },
   "category3": {
     "category_name": "Full Body Workout",
-    "duration": "45min",
+    "duration": "45",
     "calories": "220cal",
     "image": "category3",
     "exercises": [

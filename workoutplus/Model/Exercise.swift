@@ -10,7 +10,6 @@ import Foundation
 
 class Exercise {
     var name: String
-    var id: Int
     var category: String
     var sets: String
     var reps: String
@@ -20,7 +19,6 @@ class Exercise {
     init(data: JSON)
     {
         self.name = "\(data["name"].stringValue)"
-        self.id = data["id"].intValue
         self.category = "\(data["category"].stringValue)"
         self.sets = "\(data["sets"].stringValue)"
         self.reps = "\(data["reps"].stringValue)"

@@ -66,6 +66,10 @@ class CategoryViewController: UITableViewController {
                 exercises.append(Exercise(data: exercise))
             }
             destination.exercises = exercises
+            destination.categoryName = categories![indexPath.row].categoryName
+            destination.imageName = categories![indexPath.row].imageName
+            destination.duration = categories![indexPath.row].duration
+            
         }
     }
     
