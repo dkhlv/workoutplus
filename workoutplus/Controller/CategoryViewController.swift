@@ -69,6 +69,7 @@ class CategoryViewController: UITableViewController {
             destination.categoryName = categories![indexPath.row].categoryName
             destination.imageName = categories![indexPath.row].imageName
             destination.duration = categories![indexPath.row].duration
+            destination.calories = categories![indexPath.row].calories
             
         }
     }

@@ -14,9 +14,9 @@ class ExerciseViewController: UITableViewController {
     var categoryName: String?
     var imageName: String?
     var duration:String?
+    var calories: String?
 
     override func viewDidLoad() {
-//        self.navigationItem.title = categoryName
     }
     
     // MARK: - Table view data source
@@ -35,8 +35,7 @@ class ExerciseViewController: UITableViewController {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseDescriptionCell") as? ExerciseCell {
                 cell.categoryImageView.image = UIImage(named: imageName!)
                 cell.durationLabel.text = duration!
-                cell.intensityLabel.text = "Moderate"
-                cell.levelLabel.text = "Beginner"
+                cell.caloriesLabel.text = calories
                 cell.equipmentLabel.text = getEquipmentList()
                 cell.workoutCategoryLabel.text = categoryName
                 cell.markCompletedButton.layer.cornerRadius = 20
@@ -47,11 +46,19 @@ class ExerciseViewController: UITableViewController {
             if let exercise = exercises?[indexPath.row-1] {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell") as? ExerciseCell {
                     cell.exerciseNameLabel.text = exercise.name
+                    cell.exerciseSpecificsLabel.text = "\(exercise.sets) Sets • \(exercise.reps) Reps • \(exercise.weight)"
                     return cell
                 }
             }
         }
         return UITableViewCell()
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? VideoViewController, let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            destination.exerciseName = exercises![indexPath.row-1].name
+        }
     }
     
     // MARK: - Helper functions
@@ -60,7 +67,7 @@ class ExerciseViewController: UITableViewController {
         var equipmentList = [String]()
         if let exercise_list = exercises {
             for exercise in exercise_list {
-                if exercise.category != "No Equipment" && !equipmentList.contains(exercise.category){
+                if exercise.category != "No Equipment"  &&  exercise.category != "Gym" && !equipmentList.contains(exercise.category){
                     equipmentList.append(exercise.category)
                 }
             }

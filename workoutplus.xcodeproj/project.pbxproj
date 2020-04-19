@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0A25C0244BEC9C00E0927D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A25BF244BEC9C00E0927D /* VideoViewController.swift */; };
 		DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */; };
 		DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0B243AC22D003DE33C /* AppDelegate.swift */; };
 		DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0D243AC22D003DE33C /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0A25BF244BEC9C00E0927D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		DA575A08243AC22D003DE33C /* workoutplus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutplus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA575A0B243AC22D003DE33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */,
 				DA575A23243AD073003DE33C /* CategoryViewController.swift */,
 				DA575A29243D57A1003DE33C /* ExerciseViewController.swift */,
+				DA0A25BF244BEC9C00E0927D /* VideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				DA575A36243D68D2003DE33C /* ExerciseCell.swift in Sources */,
 				DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */,
 				DA575A2C243D584D003DE33C /* SwiftyJSON.swift in Sources */,
+				DA0A25C0244BEC9C00E0927D /* VideoViewController.swift in Sources */,
 				DA575A2A243D57A1003DE33C /* ExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
