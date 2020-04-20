@@ -21,6 +21,9 @@
 		DA575A34243D5E8E003DE33C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A33243D5E8E003DE33C /* Exercise.swift */; };
 		DA575A36243D68D2003DE33C /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A35243D68D2003DE33C /* ExerciseCell.swift */; };
 		DA864F8A244A9DFB002E3B2C /* workout_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DA864F89244A9DFB002E3B2C /* workout_data.json */; };
+		DA8E5195244CB09400F5411D /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E5194244CB09400F5411D /* ProgressCell.swift */; };
+		DA8E519A244CFDBE00F5411D /* WorkoutModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */; };
+		DA8E519C244CFF0900F5411D /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E519B244CFF0900F5411D /* UserStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		DA575A33243D5E8E003DE33C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		DA575A35243D68D2003DE33C /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		DA864F89244A9DFB002E3B2C /* workout_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workout_data.json; sourceTree = "<group>"; };
+		DA8E5194244CB09400F5411D /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
+		DA8E5199244CFDBE00F5411D /* WorkoutModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutModel.xcdatamodel; sourceTree = "<group>"; };
+		DA8E519B244CFF0900F5411D /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 				DA7767432447E0E0001D3DEE /* View */,
 				DA7767412447E0C6001D3DEE /* Model */,
 				DA575A0B243AC22D003DE33C /* AppDelegate.swift */,
+				DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */,
 				DA575A0D243AC22D003DE33C /* SceneDelegate.swift */,
 				DA575A11243AC22D003DE33C /* Main.storyboard */,
 				DA575A2B243D584D003DE33C /* SwiftyJSON.swift */,
@@ -91,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DA575A33243D5E8E003DE33C /* Exercise.swift */,
+				DA8E519B244CFF0900F5411D /* UserStats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 			children = (
 				DA575A35243D68D2003DE33C /* ExerciseCell.swift */,
 				DA575A25243AD303003DE33C /* CategoryCell.swift */,
+				DA8E5194244CB09400F5411D /* ProgressCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,7 +196,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8E519C244CFF0900F5411D /* UserStats.swift in Sources */,
 				DA575A26243AD303003DE33C /* CategoryCell.swift in Sources */,
+				DA8E519A244CFDBE00F5411D /* WorkoutModel.xcdatamodeld in Sources */,
 				DA575A34243D5E8E003DE33C /* Exercise.swift in Sources */,
 				DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */,
 				DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */,
@@ -197,6 +208,7 @@
 				DA575A2C243D584D003DE33C /* SwiftyJSON.swift in Sources */,
 				DA0A25C0244BEC9C00E0927D /* VideoViewController.swift in Sources */,
 				DA575A2A243D57A1003DE33C /* ExerciseViewController.swift in Sources */,
+				DA8E5195244CB09400F5411D /* ProgressCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +406,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA8E5199244CFDBE00F5411D /* WorkoutModel.xcdatamodel */,
+			);
+			currentVersion = DA8E5199244CFDBE00F5411D /* WorkoutModel.xcdatamodel */;
+			path = WorkoutModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DA575A00243AC22D003DE33C /* Project object */;
 }

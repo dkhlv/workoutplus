@@ -72,6 +72,7 @@ class CategoryViewController: UITableViewController {
             destination.calories = categories![indexPath.row].calories
             
         }
+        
     }
     
     

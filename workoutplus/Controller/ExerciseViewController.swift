@@ -19,6 +19,21 @@ class ExerciseViewController: UITableViewController {
     override func viewDidLoad() {
     }
     
+    @IBAction func completedButtonPressed(_ sender: UIButton) {
+        
+        
+        switch categoryName {
+        case "Full Body Workout":
+            UserStatistics.numWorkoutsFullBody += 1
+        case "Core & Legs":
+            UserStatistics.numWorkoutsLegs += 1
+        case "Upper Body Strength":
+            UserStatistics.numWorkoutsUpper += 1
+        default:
+            print("User completed a workout!")
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,6 +74,7 @@ class ExerciseViewController: UITableViewController {
         if let destination = segue.destination as? VideoViewController, let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
             destination.exerciseName = exercises![indexPath.row-1].name
         }
+        
     }
     
     // MARK: - Helper functions
