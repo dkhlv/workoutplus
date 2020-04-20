@@ -15,11 +15,11 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     var categories: [String]?
     var totals: [String]?
-    var headerSections: [String]?
     
+    let  headerSections = ["Workouts", "Activity"]
     let sectionsList = [
         ["Full Body Workout", "Core & Legs", "Upper Body Strength", "Yoga"],
-        ["Total Workouts", "Current Streak", "Longest Streak"]
+        ["Total Workouts", "Current Streak", "Longest Streak", "Avg Calories Burned"]
     ]
 
     
@@ -30,8 +30,12 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         
         userAvatarImage.image = UIImage(named: "2")
         userAvatarImage.layer.cornerRadius = 25
-        categories = ["Full Body Workout", "Core & Legs", "Upper Body Strength", "Yoga"]
-        headerSections = ["Workouts", "Activity"]
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: - Table View methods
@@ -50,22 +54,37 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
             switch category {
             case "Full Body Workout":
                 cell.workoutCountLabel.text = "\(UserStatistics.numWorkoutsFullBody)"
+                cell.iconImage.image = UIImage(named: "icons8-exercise-50")
             case "Core & Legs":
                 cell.workoutCountLabel.text = "\(UserStatistics.numWorkoutsLegs)"
+                cell.iconImage.image = UIImage(named: "icons8-pilates-50")
             case "Upper Body Strength":
                 cell.workoutCountLabel.text = "\(UserStatistics.numWorkoutsUpper)"
+                cell.iconImage.image = UIImage(named: "icons8-deadlift-50")
+            case "Yoga":
+                cell.workoutCountLabel.text = "0"
+                cell.iconImage.image = UIImage(named: "icons8-yoga-50")
+            case "Total Workouts":
+                cell.workoutCountLabel.text = computeTotalWorkouts()
             default:
                 cell.workoutCountLabel.text = "0"
+                cell.iconImage.image = UIImage(named: "icons8-warmup-50")
             }
+            
+            // Make cells with value 0 to be greyed out
 
-            cell.iconImage.image = UIImage(named: "icons8-barbell-50")
+            cell.workoutTypeLabel.tintColor = UIColor(named: "lightGray")
+            cell.workoutCountLabel.tintColor = UIColor(named: "lightGray")
+            cell.iconImage.tintColor = UIColor(named: "red")
+
+            
             return cell
             
         }
 
-
         return UITableViewCell()
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionsList.count
@@ -74,24 +93,19 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     // Create a standard header that includes the returned text.
     func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
-        return "\(headerSections![section])"
+        return "\(headerSections[section])"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
+    // MARK: - Helper methods
+
+    func computeTotalWorkouts() -> String {
+        let total = UserStatistics.numWorkoutsUpper + UserStatistics.numWorkoutsFullBody + UserStatistics.numWorkoutsLegs
+        return "\(total)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func computeCurrentStreak() -> String {
+        return ""
     }
-    */
     
 
 }

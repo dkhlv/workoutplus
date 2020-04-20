@@ -15,25 +15,7 @@ struct UserStatistics {
     static var numWorkoutsTotal = 0
     static var longestStreak = 0
     static var currentStreak = 0
+    static var dates: Set = [""]
+    
 }
 
-//
-//class UserStats {
-//    
-//    var numWorkoutsUpper: Int
-//    var numWorkoutsLegs: Int
-//    var numWorkoutsFullBody: Int
-//    var numWorkoutsTotal: Int
-//    var longestStreak: Int
-//    var currentStreak: Int
-//    
-//    init(numWorkoutsUpper: Int, numWorkoutsLegs: Int, numWorkoutsFullBody: Int, numWorkoutsTotal :Int, longestStreak: Int, currentStreak: Int) {
-//        self.numWorkoutsUpper = numWorkoutsUpper
-//        self.numWorkoutsLegs = numWorkoutsLegs
-//        self.numWorkoutsFullBody = numWorkoutsFullBody
-//        self.numWorkoutsTotal = numWorkoutsTotal
-//        self.longestStreak = longestStreak
-//        self.currentStreak = currentStreak
-//    }
-//    
-//}

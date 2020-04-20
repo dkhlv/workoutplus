@@ -32,6 +32,12 @@ class ExerciseViewController: UITableViewController {
         default:
             print("User completed a workout!")
         }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let today = formatter.string(from: Date())
+        UserStatistics.dates.insert(today)
+        
     }
     
     // MARK: - Table view data source
@@ -60,8 +66,8 @@ class ExerciseViewController: UITableViewController {
         } else {
             if let exercise = exercises?[indexPath.row-1] {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell") as? ExerciseCell {
-                    cell.exerciseNameLabel.text = exercise.name
-                    cell.exerciseSpecificsLabel.text = "\(exercise.sets) Sets • \(exercise.reps) Reps • \(exercise.weight)"
+                    cell.textLabel?.text = exercise.name
+                    cell.detailTextLabel?.text = "\(exercise.sets) Sets • \(exercise.reps) Reps • \(exercise.weight)"
                     return cell
                 }
             }
