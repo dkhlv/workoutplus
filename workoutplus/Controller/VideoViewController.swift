@@ -18,6 +18,7 @@ class VideoViewController: UIViewController, WKUIDelegate, WKNavigationDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Video Tutorials"
         webView.navigationDelegate = self
         let urlString = "https://www.youtube.com/results?search_query=" + getSearchKeywords(exerciseName: exerciseName ?? "")
         videoURL = URL(string: urlString)

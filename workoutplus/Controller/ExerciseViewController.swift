@@ -17,11 +17,6 @@ class ExerciseViewController: UITableViewController {
     var duration:String?
     var calories: String?
     
-    var numWorkoutsFullBody = 0
-    var numWorkoutsLegs = 0
-    var numWorkoutsUpper = 0
-    var numWorkoutsYoga = 0
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +37,7 @@ class ExerciseViewController: UITableViewController {
             default:
                 print("User completed a workout!")
         }
-        
+        updateStatsData(key: "numWorkoutsTotal")
     }
     
     // MARK: - Table view data source
@@ -104,56 +99,13 @@ class ExerciseViewController: UITableViewController {
     }
     
     // MARK: - Core Data functions
-    
-    func saveStatsData(){
-        
-        self.clearStatsData()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let stats = StatsModel(context: managedContext)
-        stats.setValue(numWorkoutsFullBody, forKey: "numWorkoutsFullBody")
-        stats.setValue(numWorkoutsLegs, forKey: "numWorkoutsLegs")
-        stats.setValue(numWorkoutsUpper, forKey: "numWorkoutsUpper")
-        stats.setValue(numWorkoutsYoga, forKey: "numWorkoutsYoga")
-        
-        do {
-            try managedContext.save()
-        } catch {
-           print("Failed to save data")
-        }
-    }
-    
-    func clearStatsData(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
             
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
-        
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            if let resultsArray = results as? [NSManagedObject] {
-                for statsData in resultsArray {
-                    managedContext.delete(statsData)
-                }
-            }
-            
-        } catch {
-            print(error)
-        }
-        
-    }
-        
     func updateStatsData(key: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
         do {
             let test = try managedContext.fetch(fetchRequest)
-            if test.capacity == 0 {
-                self.saveStatsData()
-            } else {
                 let objectUpdate = test[0] as! NSManagedObject
                 var value = objectUpdate.value(forKey: key) as! Int
                    value += 1
@@ -165,7 +117,6 @@ class ExerciseViewController: UITableViewController {
                 {
                     print(error)
                 }
-            }
         } catch {
             print(error)
         }

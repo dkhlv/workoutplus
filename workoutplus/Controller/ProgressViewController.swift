@@ -17,15 +17,22 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     var categories: [String]?
     var totals: [String]?
     
+    var numWorkoutsFullBody = 0
+    var numWorkoutsLegs = 0
+    var numWorkoutsUpper = 0
+    var numWorkoutsYoga = 0
+    var numWorkoutsTotal = 0
+    
     let headerSections = ["Workouts", "Activity"]
     let sectionsList = [
         ["Full Body Workout", "Core & Legs", "Upper Body Strength", "Yoga"],
-        ["Total Workouts", "Current Streak", "Longest Streak", "Avg Calories Burned"]
+        ["Total Workouts", "Avg Calories Burned"]
     ]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchStatsData()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -66,7 +73,7 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsYoga")
                 cell.iconImage.image = UIImage(named: "icons8-yoga-50")
             case "Total Workouts":
-                cell.workoutCountLabel.text = computeTotalWorkouts()
+                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsTotal")
             default:
                 cell.workoutCountLabel.text = "0"
                 cell.iconImage.image = UIImage(named: "icons8-warmup-50")
@@ -99,15 +106,8 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - Helper methods
 
-    func computeTotalWorkouts() -> String {
-       
-        return "0"
-    }
     
-    func computeCurrentStreak() -> String {
-        return ""
-    }
-    
+
     // MARK: - Core Data functions
     
     func retrieveStatsData(key: String) -> String {
@@ -131,6 +131,63 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
             print("Fail")
         }
         return queryResult
+    }
+    
+    func fetchStatsData() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
+        do {
+            let test = try managedContext.fetch(fetchRequest)
+            if test.capacity == 0 {
+                self.saveStatsData()
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveStatsData(){
+        
+        self.clearStatsData()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+        let stats = StatsModel(context: managedContext)
+
+
+        stats.setValue(numWorkoutsFullBody, forKey: "numWorkoutsFullBody")
+        stats.setValue(numWorkoutsLegs, forKey: "numWorkoutsLegs")
+        stats.setValue(numWorkoutsUpper, forKey: "numWorkoutsUpper")
+        stats.setValue(numWorkoutsYoga, forKey: "numWorkoutsYoga")
+        stats.setValue(numWorkoutsTotal, forKey: "numWorkoutsTotal")
+        
+        do {
+            try managedContext.save()
+        } catch {
+           print("Failed to save data")
+        }
+    }
+    
+    func clearStatsData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if let resultsArray = results as? [NSManagedObject] {
+                for statsData in resultsArray {
+                    managedContext.delete(statsData)
+                }
+            }
+            
+        } catch {
+            print(error)
+        }
+        
     }
     
     

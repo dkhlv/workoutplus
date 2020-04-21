@@ -3,10 +3,11 @@
     <entity name="StatsModel" representedClassName="StatsModel" syncable="YES" codeGenerationType="class">
         <attribute name="numWorkoutsFullBody" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="numWorkoutsLegs" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numWorkoutsTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="numWorkoutsUpper" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="numWorkoutsYoga" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="StatsModel" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="StatsModel" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

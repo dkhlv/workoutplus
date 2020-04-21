@@ -8,23 +8,6 @@
 
 import UIKit
 
-struct Category {
-    var categoryName: String
-    var duration: String
-    var calories: String
-    var imageName: String
-    var exercises: [JSON]
-    
-    init(data: JSON)
-    {
-        self.categoryName = "\(data["category_name"].stringValue)"
-        self.duration = "\(data["duration"].stringValue)"
-        self.calories = "\(data["calories"].stringValue)"
-        self.imageName = "\(data["image"].stringValue)"
-        self.exercises = data["exercises"].arrayValue
-    }
-}
-
 class CategoryViewController: UITableViewController {
     
     var categories: [Category]?
@@ -77,6 +60,7 @@ class CategoryViewController: UITableViewController {
     
     
     // MARK: - Helper functions
+    
     func loadData()
     {
         var categoryData: JSON?
