@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Progress View Controller-->
         <scene sceneID="i8v-7O-B6L">
             <objects>
                 <viewController id="aNB-4n-TwI" customClass="ProgressViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +19,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-gL-MIw">
-                                        <rect key="frame" x="366" y="67" width="25" height="25"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-gL-MIw">
+                                        <rect key="frame" x="362" y="64" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit Profile" image="pencil" catalog="system"/>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <segue destination="sqj-eG-iLu" kind="show" id="nKy-Z0-6ED"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -43,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgressCell" id="CST-EK-H8w" customClass="ProgressCell" customModule="workoutplus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProgressCell" id="CST-EK-H8w" customClass="ProgressCell" customModule="workoutplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="416" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CST-EK-H8w" id="1d8-GR-8Ym">
@@ -82,9 +85,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iYu-Ze-FPN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Cuh-4C-wos"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="tmn-uh-nno"/>
+                    <navigationItem key="navigationItem" id="x6u-eu-a3X"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="HQH-YH-TkB" id="ScF-UW-jeF"/>
@@ -94,22 +96,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4W-hx-7HW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002.8985507246377" y="531.69642857142856"/>
+            <point key="canvasLocation" x="1913.0434782608697" y="531.69642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="Jd3-9s-1sI">
             <objects>
-                <viewController id="sqj-eG-iLu" sceneMemberID="viewController">
+                <viewController id="sqj-eG-iLu" customClass="EditProfileViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="evO-2y-N97">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-er-231">
+                                <rect key="frame" x="145" y="113" width="125" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1UN-kd-kuj">
+                                <rect key="frame" x="225" y="193" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnl-YU-MLP">
+                                <rect key="frame" x="36" y="276" width="342" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dHP-dk-GGT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BPa-Sv-fhG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ecw-A2-Wfo"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBW-Jk-hA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="530"/>
+            <point key="canvasLocation" x="2692.753623188406" y="529.6875"/>
         </scene>
         <!--Workout Plus-->
         <scene sceneID="cB7-41-VzJ">
@@ -372,20 +394,40 @@
                     </tabBar>
                     <connections>
                         <segue destination="7B7-cN-63P" kind="relationship" relationship="viewControllers" id="pre-Hr-mc9"/>
-                        <segue destination="aNB-4n-TwI" kind="relationship" relationship="viewControllers" id="cdg-fM-UEv"/>
+                        <segue destination="3E3-9s-v9F" kind="relationship" relationship="viewControllers" id="cdg-fM-UEv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRD-QP-vkK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="43" y="204"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="9qc-7M-OX6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3E3-9s-v9F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Cuh-4C-wos"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3yZ-9v-cOJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aNB-4n-TwI" kind="relationship" relationship="rootViewController" id="fbX-4f-AH2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWS-Pt-mLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.8985507246377" y="531.69642857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="2" width="128" height="128"/>
+        <image name="camera" catalog="system" width="64" height="48"/>
         <image name="icons8-warm-up-50" width="50" height="50"/>
-        <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="play.circle" catalog="system" width="64" height="60"/>
+        <image name="profile_icon" width="20" height="20"/>
         <image name="strength" width="4933" height="3289"/>
     </resources>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
