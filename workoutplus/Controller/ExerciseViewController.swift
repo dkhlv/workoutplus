@@ -16,6 +16,12 @@ class ExerciseViewController: UITableViewController {
     var imageName: String?
     var duration:String?
     var calories: String?
+    var categoryDictionary = [
+        "Full Body Workout": "numWorkoutsFullBody",
+        "Core & Legs": "numWorkoutsLegs",
+        "Upper Body Strength": "numWorkoutsUpper",
+        "Yoga": "numWorkoutsYoga"
+    ]
     
 
     override func viewDidLoad() {
@@ -24,18 +30,8 @@ class ExerciseViewController: UITableViewController {
     
     @IBAction func completedButtonPressed(_ sender: UIButton) {
         
-        
-        switch categoryName {
-            case "Full Body Workout":
-                updateStatsData(key: "numWorkoutsFullBody")
-            case "Core & Legs":
-                updateStatsData(key: "numWorkoutsLegs")
-            case "Upper Body Strength":
-                updateStatsData(key: "numWorkoutsUpper")
-            case "Yoga":
-                updateStatsData(key: "numWorkoutsYoga")
-            default:
-                print("User completed a workout!")
+        if let category = categoryName {
+            updateStatsData(key: categoryDictionary[category]!)
         }
         updateStatsData(key: "numWorkoutsTotal")
     }

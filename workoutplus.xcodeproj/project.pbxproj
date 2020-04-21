@@ -24,6 +24,7 @@
 		DA8E5195244CB09400F5411D /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E5194244CB09400F5411D /* ProgressCell.swift */; };
 		DA8E519A244CFDBE00F5411D /* WorkoutModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */; };
 		DAF5C715244F24E900DA5EE2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C714244F24E900DA5EE2 /* Category.swift */; };
+		DAF5C717244F3EB400DA5EE2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C716244F3EB400DA5EE2 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DA8E5194244CB09400F5411D /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		DA8E5199244CFDBE00F5411D /* WorkoutModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutModel.xcdatamodel; sourceTree = "<group>"; };
 		DAF5C714244F24E900DA5EE2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		DAF5C716244F3EB400DA5EE2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				DA575A0B243AC22D003DE33C /* AppDelegate.swift */,
 				DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */,
 				DA575A0D243AC22D003DE33C /* SceneDelegate.swift */,
+				DAF5C716244F3EB400DA5EE2 /* Helpers.swift */,
 				DA575A11243AC22D003DE33C /* Main.storyboard */,
 				DA575A2B243D584D003DE33C /* SwiftyJSON.swift */,
 				DA575A16243AC235003DE33C /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA575A26243AD303003DE33C /* CategoryCell.swift in Sources */,
+				DAF5C717244F3EB400DA5EE2 /* Helpers.swift in Sources */,
 				DA8E519A244CFDBE00F5411D /* WorkoutModel.xcdatamodeld in Sources */,
 				DA575A34243D5E8E003DE33C /* Exercise.swift in Sources */,
 				DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */,

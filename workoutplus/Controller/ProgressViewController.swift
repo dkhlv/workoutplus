@@ -14,7 +14,7 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var userAvatarImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var categories: [String]?
+    var categories: [Category]?
     var totals: [String]?
     
     var numWorkoutsFullBody = 0
@@ -24,15 +24,19 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     var numWorkoutsTotal = 0
     
     let headerSections = ["Workouts", "Activity"]
-    let sectionsList = [
-        ["Full Body Workout", "Core & Legs", "Upper Body Strength", "Yoga"],
-        ["Total Workouts", "Avg Calories Burned"]
-    ]
+    var workoutNames = [String]()
+    var sectionsList = [[String]]()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadTableData()
         self.fetchStatsData()
+        workoutNames = getWorkoutNames(categories: categories)
+        sectionsList = [
+            workoutNames,
+            ["Total Workouts", "Avg Calories Burned"]
+        ]
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -40,6 +44,26 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         userAvatarImage.layer.cornerRadius = 25
 
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        // 1
+//        let nav = self.navigationController?.navigationBar
+//      
+//        // 2
+//        nav?.barStyle = UIBarStyle.black
+//        nav?.tintColor = UIColor.yellow
+//      
+//        // 3
+//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+//        imageView.contentMode = .scaleAspectFit
+//          
+//        // 4
+//        let image = UIImage(named: "2")
+//        imageView.image = image
+//          
+//        // 5
+//        navigationItem.titleView = imageView
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,17 +98,14 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.iconImage.image = UIImage(named: "icons8-yoga-50")
             case "Total Workouts":
                 cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsTotal")
+                cell.iconImage.image = UIImage(systemName: "star")
+            case "Avg Calories Burned":
+                cell.workoutCountLabel.text = "0"
+                cell.iconImage.image = UIImage(systemName: "flame")
             default:
                 cell.workoutCountLabel.text = "0"
                 cell.iconImage.image = UIImage(named: "icons8-warmup-50")
             }
-            
-            // Make cells with value 0 to be greyed out
-
-            cell.workoutTypeLabel.tintColor = UIColor(named: "lightGray")
-            cell.workoutCountLabel.tintColor = UIColor(named: "lightGray")
-            cell.iconImage.tintColor = UIColor(named: "red")
-
             
             return cell
             
@@ -104,7 +125,33 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         return "\(headerSections[section])"
     }
     
-    // MARK: - Helper methods
+    // MARK: - Helper functions
+    
+    func loadTableData()
+    {
+        var categoryData: JSON?
+        self.categories = [Category]()
+        categoryData = readJSONFromFile(fileName: "workout_data")
+            
+            if let category = categoryData {
+                for (_, json) in category {
+                    self.categories?.append(Category(data: json))
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+    }
+    
+    func getWorkoutNames(categories: [Category]?)-> [String] {
+        var names = [String]()
+        if let categoryArray = categories {
+            for category in categoryArray {
+                names.append(category.categoryName)
+            }
+        }
+        return names
+    }
 
     
 

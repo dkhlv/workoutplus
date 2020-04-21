@@ -18,14 +18,21 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwt-1n-plI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-gL-MIw">
+                                        <rect key="frame" x="366" y="67" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Edit Profile" image="pencil" catalog="system"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ji4-zE-mja">
                                 <rect key="frame" x="20" y="44" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksp-gv-0eW">
-                                <rect key="frame" x="88" y="59" width="37" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksp-gv-0eW">
+                                <rect key="frame" x="88" y="59" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -76,7 +83,9 @@
                         <viewLayoutGuide key="safeArea" id="iYu-Ze-FPN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Cuh-4C-wos"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="tmn-uh-nno"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="HQH-YH-TkB" id="ScF-UW-jeF"/>
                         <outlet property="userAvatarImage" destination="Ji4-zE-mja" id="eQ5-Be-WNN"/>
@@ -86,6 +95,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4W-hx-7HW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002.8985507246377" y="531.69642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jd3-9s-1sI">
+            <objects>
+                <viewController id="sqj-eG-iLu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="evO-2y-N97">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dHP-dk-GGT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pBW-Jk-hA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="530"/>
         </scene>
         <!--Workout Plus-->
         <scene sceneID="cB7-41-VzJ">
@@ -359,6 +383,7 @@
     <resources>
         <image name="2" width="128" height="128"/>
         <image name="icons8-warm-up-50" width="50" height="50"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="play.circle" catalog="system" width="64" height="60"/>
         <image name="strength" width="4933" height="3289"/>
