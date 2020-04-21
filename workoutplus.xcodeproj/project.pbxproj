@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA0A25C0244BEC9C00E0927D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A25BF244BEC9C00E0927D /* VideoViewController.swift */; };
+		DA1DAF7B244E80D900029182 /* backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DAF7A244E80D900029182 /* backup.swift */; };
 		DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */; };
 		DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0B243AC22D003DE33C /* AppDelegate.swift */; };
 		DA575A0E243AC22D003DE33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575A0D243AC22D003DE33C /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		DA0A25BF244BEC9C00E0927D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		DA1DAF7A244E80D900029182 /* backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backup.swift; sourceTree = "<group>"; };
 		DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		DA575A08243AC22D003DE33C /* workoutplus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutplus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA575A0B243AC22D003DE33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				DA575A35243D68D2003DE33C /* ExerciseCell.swift */,
 				DA575A25243AD303003DE33C /* CategoryCell.swift */,
 				DA8E5194244CB09400F5411D /* ProgressCell.swift */,
+				DA1DAF7A244E80D900029182 /* backup.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				DA575A24243AD073003DE33C /* CategoryViewController.swift in Sources */,
 				DA575A36243D68D2003DE33C /* ExerciseCell.swift in Sources */,
 				DA4EAF8B24400F9F001D33E8 /* ProgressViewController.swift in Sources */,
+				DA1DAF7B244E80D900029182 /* backup.swift in Sources */,
 				DA575A2C243D584D003DE33C /* SwiftyJSON.swift in Sources */,
 				DA0A25C0244BEC9C00E0927D /* VideoViewController.swift in Sources */,
 				DA575A2A243D57A1003DE33C /* ExerciseViewController.swift in Sources */,

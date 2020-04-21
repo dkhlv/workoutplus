@@ -103,7 +103,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category1" translatesAutoresizingMaskIntoConstraints="NO" id="lzd-cW-mPn">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strength" translatesAutoresizingMaskIntoConstraints="NO" id="lzd-cW-mPn">
                                             <rect key="frame" x="2" y="2" width="411" height="247"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THJ-HR-HeG">
@@ -155,11 +155,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="category1" translatesAutoresizingMaskIntoConstraints="NO" id="pX4-r4-GBu">
-                                            <rect key="frame" x="0.0" y="-15" width="414" height="315"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strength" translatesAutoresizingMaskIntoConstraints="NO" id="pX4-r4-GBu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="300" id="ffY-fT-2pI"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="qxu-Kd-B5z"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-G5-k3z">
@@ -308,7 +307,7 @@
                         <viewLayoutGuide key="safeArea" id="rWh-3U-Bxd"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ogw-ye-eJu">
-                        <barButtonItem key="backBarButtonItem" title="dadada" id="i0n-82-h8M"/>
+                        <barButtonItem key="backBarButtonItem" title="&quot; &quot;" id="i0n-82-h8M"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="0gU-ck-2IE" id="vLp-oo-PJa"/>
@@ -359,10 +358,10 @@
     </scenes>
     <resources>
         <image name="2" width="128" height="128"/>
-        <image name="category1" width="4933" height="3289"/>
         <image name="icons8-warm-up-50" width="50" height="50"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="play.circle" catalog="system" width="64" height="60"/>
+        <image name="strength" width="4933" height="3289"/>
     </resources>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

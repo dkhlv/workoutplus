@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProgressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
@@ -16,7 +17,7 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     var categories: [String]?
     var totals: [String]?
     
-    let  headerSections = ["Workouts", "Activity"]
+    let headerSections = ["Workouts", "Activity"]
     let sectionsList = [
         ["Full Body Workout", "Core & Legs", "Upper Body Strength", "Yoga"],
         ["Total Workouts", "Current Streak", "Longest Streak", "Avg Calories Burned"]
@@ -53,16 +54,16 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
             cell.workoutTypeLabel.text = category
             switch category {
             case "Full Body Workout":
-                cell.workoutCountLabel.text = "\(UserStatistics.numWorkoutsFullBody)"
+                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsFullBody")
                 cell.iconImage.image = UIImage(named: "icons8-exercise-50")
             case "Core & Legs":
-                cell.workoutCountLabel.text = "\(UserStatistics.numWorkoutsLegs)"
+                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsLegs")
                 cell.iconImage.image = UIImage(named: "icons8-pilates-50")
             case "Upper Body Strength":
-                cell.workoutCountLabel.text = "\(UserStatistics.numWorkoutsUpper)"
+                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsUpper")
                 cell.iconImage.image = UIImage(named: "icons8-deadlift-50")
             case "Yoga":
-                cell.workoutCountLabel.text = "0"
+                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsYoga")
                 cell.iconImage.image = UIImage(named: "icons8-yoga-50")
             case "Total Workouts":
                 cell.workoutCountLabel.text = computeTotalWorkouts()
@@ -99,13 +100,39 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Helper methods
 
     func computeTotalWorkouts() -> String {
-        let total = UserStatistics.numWorkoutsUpper + UserStatistics.numWorkoutsFullBody + UserStatistics.numWorkoutsLegs
-        return "\(total)"
+       
+        return "0"
     }
     
     func computeCurrentStreak() -> String {
         return ""
     }
+    
+    // MARK: - Core Data functions
+    
+    func retrieveStatsData(key: String) -> String {
+        
+        var queryResult = ""
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return queryResult }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                queryResult = "\(data.value(forKey: key) as! Int)"
+                
+//                print("Full body: \(data.value(forKey: "numWorkoutsFullBody") as! Int)")
+//                print("Legs: \(data.value(forKey: "numWorkoutsLegs") as! Int)")
+//                print("Upper: \(data.value(forKey: "numWorkoutsUpper") as! Int)")
+//                print("Yoga \(data.value(forKey: "numWorkoutsYoga") as! Int)")
+            }
+        } catch {
+            print("Fail")
+        }
+        return queryResult
+    }
+    
     
 
 }
