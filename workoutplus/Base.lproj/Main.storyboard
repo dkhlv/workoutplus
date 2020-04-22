@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="aNB-4n-TwI" customClass="ProgressViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JDK-lG-KDG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwt-1n-plI">
@@ -103,7 +103,7 @@
             <objects>
                 <viewController id="sqj-eG-iLu" customClass="EditProfileViewController" customModule="workoutplus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="evO-2y-N97">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-er-231">
@@ -137,7 +137,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ecw-A2-Wfo">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="sqj-eG-iLu" id="xGn-5O-Nv7"/>
-                                <segue destination="aNB-4n-TwI" kind="show" identifier="shareUserData" id="ITh-Eh-czy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -448,8 +447,5 @@
         <image name="profile_icon" width="20" height="20"/>
         <image name="strength" width="4933" height="3289"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ITh-Eh-czy"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

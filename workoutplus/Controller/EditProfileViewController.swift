@@ -20,6 +20,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         avatarImage.layer.cornerRadius = avatarImage.frame.size.height/2
+        avatarImage.image = loadImage()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
@@ -38,11 +39,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             CoreDataHelper.instance.saveImage(data: imageData)
         }
         
-        if let userName = nameTextField.text {
-            CoreDataHelper.instance.saveUserInfo(data: userName)
-        }
-        
-        performSegue(withIdentifier: "shareUserData", sender: nil)
+//        if let userName = nameTextField.text {
+//            CoreDataHelper.instance.saveUserInfo(data: userName)
+//        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,15 +59,15 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "shareUserData" {
-            if let destination = segue.destination as? ProgressViewController {
-                destination.userAvatarImage = avatarImage
-                destination.userNameLabel.text = userName ?? "User"
-            }
-        }
+    func loadImage() -> UIImage {
+        let arr = CoreDataHelper.instance.fetchImage()
+        let defaultImage = UIImage(named: "profile_icon")!
         
+        if arr.capacity == 0 {
+            return defaultImage
+        } else {
+            return UIImage(data: arr[0].img!)!
+        }
     }
     
 }

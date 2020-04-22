@@ -15,6 +15,7 @@ struct Category {
     var duration: String
     var calories: String
     var imageName: String
+    var icon: String
     var exercises: [JSON]
     
     init(data: JSON)
@@ -24,6 +25,7 @@ struct Category {
         self.duration = "\(data["duration"].stringValue)"
         self.calories = "\(data["calories"].stringValue)"
         self.imageName = "\(data["image"].stringValue)"
+        self.icon = "\(data["icon"].stringValue)"
         self.exercises = data["exercises"].arrayValue
     }
 }

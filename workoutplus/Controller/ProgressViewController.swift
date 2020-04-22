@@ -26,11 +26,19 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     let headerSections = ["Workouts", "Activity"]
     var workoutNames = [String]()
     var sectionsList = [[String]]()
+    
+    var categoryDictionary = [
+        "Full Body Workout": "numWorkoutsFullBody",
+        "Core & Legs": "numWorkoutsLegs",
+        "Upper Body Strength": "numWorkoutsUpper",
+        "Yoga": "numWorkoutsYoga",
+        "Total Workouts": "numWorkoutsTotal"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadTableData()
-        self.fetchStatsData()
+        CoreDataHelper.instance.fetchStatsData()
         workoutNames = getWorkoutNames(categories: categories)
         sectionsList = [
             workoutNames,
@@ -52,6 +60,9 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         tableView.reloadData()
+        userAvatarImage.image = self.loadImage()
+        userNameLabel.text = self.loadUserName()
+        
     }
     
     // MARK: - Table View methods
@@ -65,30 +76,19 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCell") as? ProgressCell {
             let category = sectionsList[indexPath.section][indexPath.row]
-
             cell.workoutTypeLabel.text = category
+
             switch category {
-            case "Full Body Workout":
-                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsFullBody")
-                cell.iconImage.image = UIImage(named: "icons8-exercise-50")
-            case "Core & Legs":
-                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsLegs")
-                cell.iconImage.image = UIImage(named: "icons8-pilates-50")
-            case "Upper Body Strength":
-                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsUpper")
-                cell.iconImage.image = UIImage(named: "icons8-deadlift-50")
-            case "Yoga":
-                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsYoga")
-                cell.iconImage.image = UIImage(named: "icons8-yoga-50")
             case "Total Workouts":
-                cell.workoutCountLabel.text = self.retrieveStatsData(key: "numWorkoutsTotal")
                 cell.iconImage.image = UIImage(systemName: "star")
+                cell.workoutCountLabel.text = CoreDataHelper.instance.retrieveStatsData(key: categoryDictionary[category]!)
             case "Avg Calories Burned":
-                cell.workoutCountLabel.text = "0"
+                cell.workoutCountLabel.text = self.computeCaloriesAvg()
                 cell.iconImage.image = UIImage(systemName: "flame")
             default:
-                cell.workoutCountLabel.text = "0"
-                cell.iconImage.image = UIImage(named: "icons8-warmup-50")
+                cell.workoutCountLabel.text = CoreDataHelper.instance.retrieveStatsData(key: categoryDictionary[category]!)
+                let iconImage = categories![indexPath.row].icon
+                cell.iconImage.image = UIImage(named: iconImage)
             }
             
             return cell
@@ -158,91 +158,9 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
             return arr[0].name!
         }
     }
-
     
-
-    // MARK: - Core Data functions
-    
-    func retrieveStatsData(key: String) -> String {
-        
-        var queryResult = ""
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return queryResult }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
-        
-        do {
-            let result = try managedContext.fetch(fetchRequest)
-            for data in result as! [NSManagedObject] {
-                queryResult = "\(data.value(forKey: key) as! Int)"
-                
-//                print("Full body: \(data.value(forKey: "numWorkoutsFullBody") as! Int)")
-//                print("Legs: \(data.value(forKey: "numWorkoutsLegs") as! Int)")
-//                print("Upper: \(data.value(forKey: "numWorkoutsUpper") as! Int)")
-//                print("Yoga \(data.value(forKey: "numWorkoutsYoga") as! Int)")
-            }
-        } catch {
-            print("Fail")
-        }
-        return queryResult
+    func computeCaloriesAvg() -> String {
+        return "0"
     }
-    
-    func fetchStatsData() {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
-        do {
-            let test = try managedContext.fetch(fetchRequest)
-            if test.capacity == 0 {
-                self.saveStatsData()
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func saveStatsData(){
-        
-        self.clearStatsData()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-
-        let stats = StatsModel(context: managedContext)
-
-
-        stats.setValue(numWorkoutsFullBody, forKey: "numWorkoutsFullBody")
-        stats.setValue(numWorkoutsLegs, forKey: "numWorkoutsLegs")
-        stats.setValue(numWorkoutsUpper, forKey: "numWorkoutsUpper")
-        stats.setValue(numWorkoutsYoga, forKey: "numWorkoutsYoga")
-        stats.setValue(numWorkoutsTotal, forKey: "numWorkoutsTotal")
-        
-        do {
-            try managedContext.save()
-        } catch {
-           print("Failed to save data")
-        }
-    }
-    
-    func clearStatsData(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
-        
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            if let resultsArray = results as? [NSManagedObject] {
-                for statsData in resultsArray {
-                    managedContext.delete(statsData)
-                }
-            }
-            
-        } catch {
-            print(error)
-        }
-        
-    }
-    
-    
 
 }

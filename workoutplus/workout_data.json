@@ -2,9 +2,10 @@
   "category1": {
     "category_name": "Upper Body Strength",
     "category_id": "1",
-    "duration": "30",
+    "duration": "45",
     "calories": "150",
     "image": "strength",
+    "icon": "icons8-deadlift-50",
     "exercises": [
       {
         "name": "Bench Press (machine)",
@@ -67,9 +68,10 @@
   "category2": {
     "category_name": "Core & Legs",
     "category_id": "2",
-    "duration": "30",
-    "calories": "100",
+    "duration": "60",
+    "calories": "150",
     "image": "legs",
+    "icon": "icons8-pilates-50",
     "exercises": [
       {
         "name": "Squat and Shoulder Press",
@@ -118,9 +120,10 @@
   "category3": {
     "category_name": "Full Body Workout",
     "category_id": "3",
-    "duration": "45",
+    "duration": "60",
     "calories": "220",
     "image": "workout",
+    "icon": "icons8-exercise-50",
     "exercises": [
       {
         "name": "Squat and Bicep Curl",
@@ -183,9 +186,10 @@
   "category4": {
     "category_name": "Yoga",
     "category_id": "4",
-    "duration": "60",
-    "calories": "150",
+    "duration": "20",
+    "calories": "80",
     "image": "yoga",
+    "icon": "icons8-yoga-50",
     "exercises": [
       {
         "name": "Upward Facing Dog",

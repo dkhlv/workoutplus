@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class ExerciseViewController: UITableViewController {
     
@@ -31,9 +30,9 @@ class ExerciseViewController: UITableViewController {
     @IBAction func completedButtonPressed(_ sender: UIButton) {
         
         if let category = categoryName {
-            updateStatsData(key: categoryDictionary[category]!)
+            CoreDataHelper.instance.updateStatsData(key: categoryDictionary[category]!)
         }
-        updateStatsData(key: "numWorkoutsTotal")
+        CoreDataHelper.instance.updateStatsData(key: "numWorkoutsTotal")
     }
     
     // MARK: - Table view data source
@@ -92,31 +91,6 @@ class ExerciseViewController: UITableViewController {
         }
         
         return equipmentList.joined(separator: "•")
-    }
-    
-    // MARK: - Core Data functions
-            
-    func updateStatsData(key: String){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StatsModel")
-        do {
-            let test = try managedContext.fetch(fetchRequest)
-                let objectUpdate = test[0] as! NSManagedObject
-                var value = objectUpdate.value(forKey: key) as! Int
-                   value += 1
-                objectUpdate.setValue(value, forKey: key)
-                do{
-                    try managedContext.save()
-                }
-                catch
-                {
-                    print(error)
-                }
-        } catch {
-            print(error)
-        }
-
     }
     
 }

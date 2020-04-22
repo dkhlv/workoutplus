@@ -14,8 +14,8 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="StatsModel" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="Image" positionX="-63" positionY="18" width="128" height="58"/>
+        <element name="StatsModel" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="UserModel" positionX="-54" positionY="45" width="128" height="58"/>
     </elements>
 </model>
