@@ -40,8 +40,10 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
-        userAvatarImage.image = UIImage(named: "profile_icon")
-        userAvatarImage.layer.cornerRadius = 25
+        userAvatarImage.image = self.loadImage()
+        userAvatarImage.layer.cornerRadius = userAvatarImage.frame.size.height/2
+        
+        userNameLabel.text = self.loadUserName()
 
     }
     
@@ -133,6 +135,28 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         return names
+    }
+    
+    func loadImage() -> UIImage {
+        let arr = CoreDataHelper.instance.fetchImage()
+        let defaultImage = UIImage(named: "profile_icon")!
+        
+        if arr.capacity == 0 {
+            return defaultImage
+        } else {
+            return UIImage(data: arr[0].img!)!
+        }
+    }
+    
+    func loadUserName() -> String {
+        let arr = CoreDataHelper.instance.fetchUserInfo()
+        let defaultName = "User"
+        
+        if arr.capacity == 0 {
+            return defaultName
+        } else {
+            return arr[0].name!
+        }
     }
 
     

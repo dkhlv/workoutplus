@@ -26,6 +26,7 @@
 		DAF5C715244F24E900DA5EE2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C714244F24E900DA5EE2 /* Category.swift */; };
 		DAF5C717244F3EB400DA5EE2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C716244F3EB400DA5EE2 /* Helpers.swift */; };
 		DAF5C719244FB59400DA5EE2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C718244FB59400DA5EE2 /* EditProfileViewController.swift */; };
+		DAF5C71B244FDC7E00DA5EE2 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C71A244FDC7D00DA5EE2 /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		DAF5C714244F24E900DA5EE2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DAF5C716244F3EB400DA5EE2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		DAF5C718244FB59400DA5EE2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		DAF5C71A244FDC7D00DA5EE2 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				DA7767432447E0E0001D3DEE /* View */,
 				DA7767412447E0C6001D3DEE /* Model */,
 				DA575A0B243AC22D003DE33C /* AppDelegate.swift */,
+				DAF5C71A244FDC7D00DA5EE2 /* CoreDataHelper.swift */,
 				DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */,
 				DA575A0D243AC22D003DE33C /* SceneDelegate.swift */,
 				DAF5C716244F3EB400DA5EE2 /* Helpers.swift */,
@@ -121,11 +124,11 @@
 		DA7767442447E0E6001D3DEE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */,
-				DAF5C718244FB59400DA5EE2 /* EditProfileViewController.swift */,
 				DA575A23243AD073003DE33C /* CategoryViewController.swift */,
 				DA575A29243D57A1003DE33C /* ExerciseViewController.swift */,
 				DA0A25BF244BEC9C00E0927D /* VideoViewController.swift */,
+				DA4EAF8A24400F9F001D33E8 /* ProgressViewController.swift */,
+				DAF5C718244FB59400DA5EE2 /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				DA575A26243AD303003DE33C /* CategoryCell.swift in Sources */,
 				DAF5C717244F3EB400DA5EE2 /* Helpers.swift in Sources */,
+				DAF5C71B244FDC7E00DA5EE2 /* CoreDataHelper.swift in Sources */,
 				DA8E519A244CFDBE00F5411D /* WorkoutModel.xcdatamodeld in Sources */,
 				DA575A34243D5E8E003DE33C /* Exercise.swift in Sources */,
 				DA575A0C243AC22D003DE33C /* AppDelegate.swift in Sources */,
