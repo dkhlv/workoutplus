@@ -44,6 +44,7 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         userNameLabel.text = self.loadUserName()
         
         self.tableView.tableFooterView = UIView()
+        self.tableView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
 
     }
     
@@ -95,12 +96,23 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         return sectionsList.count
     }
     
-    // Create a standard header that includes the returned text.
-    func tableView(_ tableView: UITableView, titleForHeaderInSection
-                                section: Int) -> String? {
-        return "\(headerSections[section])"
-    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection
+                                 section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        let label = UILabel()
+        label.text = "\(headerSections[section])"
+        label.frame = CGRect(x: 45, y: 5, width: 100, height: 30)
+        view.addSubview(label)
+        
+        return view
+            
+     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection
+        section: Int) -> CGFloat {
+        return 35
+    }
     // MARK: - Helper functions
     
     func loadTableData()

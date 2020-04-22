@@ -25,7 +25,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         cameraButton.imageView?.contentMode = .scaleAspectFit
-        cameraButton.imageEdgeInsets = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 10.0, right: 0.0)
+        self.view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
                 
     }
     
