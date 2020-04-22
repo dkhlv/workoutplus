@@ -15,7 +15,7 @@ class ExerciseViewController: UITableViewController {
     var imageName: String?
     var duration:String?
     var calories: String?
-    var categoryDictionary = [
+    var dbLookupDictionary = [
         "Full Body Workout": "numWorkoutsFullBody",
         "Core & Legs": "numWorkoutsLegs",
         "Upper Body Strength": "numWorkoutsUpper",
@@ -25,12 +25,13 @@ class ExerciseViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
     }
     
     @IBAction func completedButtonPressed(_ sender: UIButton) {
         
         if let category = categoryName {
-            CoreDataHelper.instance.updateStatsData(key: categoryDictionary[category]!)
+            CoreDataHelper.instance.updateStatsData(key: dbLookupDictionary[category]!)
         }
         CoreDataHelper.instance.updateStatsData(key: "numWorkoutsTotal")
     }
@@ -54,7 +55,7 @@ class ExerciseViewController: UITableViewController {
                 cell.caloriesLabel.text = calories
                 cell.equipmentLabel.text = getEquipmentList()
                 cell.workoutCategoryLabel.text = categoryName
-                cell.markCompletedButton.layer.cornerRadius = 20
+                cell.markCompletedButton.layer.cornerRadius = 18
                 return cell
             }
             
@@ -63,6 +64,7 @@ class ExerciseViewController: UITableViewController {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell") as? ExerciseCell {
                     cell.textLabel?.text = exercise.name
                     cell.detailTextLabel?.text = "\(exercise.sets) Sets • \(exercise.reps) Reps • \(exercise.weight)"
+                    cell.detailTextLabel?.textColor = UIColor.gray
                     return cell
                 }
             }

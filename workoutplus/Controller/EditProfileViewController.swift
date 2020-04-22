@@ -39,9 +39,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             CoreDataHelper.instance.saveImage(data: imageData)
         }
         
-//        if let userName = nameTextField.text {
-//            CoreDataHelper.instance.saveUserInfo(data: userName)
-//        }
+        
+        if let userName = nameTextField.text {
+            if userName != "" {
+                CoreDataHelper.instance.saveUserInfo(data: userName)
+            }
+        }
 
     }
     

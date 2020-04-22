@@ -15,31 +15,22 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var categories: [Category]?
-    var totals: [String]?
-    
-    var numWorkoutsFullBody = 0
-    var numWorkoutsLegs = 0
-    var numWorkoutsUpper = 0
-    var numWorkoutsYoga = 0
-    var numWorkoutsTotal = 0
     
     let headerSections = ["Workouts", "Activity"]
-    var workoutNames = [String]()
     var sectionsList = [[String]]()
     
-    var categoryDictionary = [
+    var dbLookupDictionary = [
         "Full Body Workout": "numWorkoutsFullBody",
         "Core & Legs": "numWorkoutsLegs",
         "Upper Body Strength": "numWorkoutsUpper",
         "Yoga": "numWorkoutsYoga",
-        "Total Workouts": "numWorkoutsTotal"
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadTableData()
         CoreDataHelper.instance.fetchStatsData()
-        workoutNames = getWorkoutNames(categories: categories)
+        let workoutNames = getWorkoutNames(categories: categories)
         sectionsList = [
             workoutNames,
             ["Total Workouts", "Avg Calories Burned"]
@@ -50,8 +41,9 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
         
         userAvatarImage.image = self.loadImage()
         userAvatarImage.layer.cornerRadius = userAvatarImage.frame.size.height/2
-        
         userNameLabel.text = self.loadUserName()
+        
+        self.tableView.tableFooterView = UIView()
 
     }
     
@@ -79,16 +71,16 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
             cell.workoutTypeLabel.text = category
 
             switch category {
-            case "Total Workouts":
-                cell.iconImage.image = UIImage(systemName: "star")
-                cell.workoutCountLabel.text = CoreDataHelper.instance.retrieveStatsData(key: categoryDictionary[category]!)
-            case "Avg Calories Burned":
-                cell.workoutCountLabel.text = self.computeCaloriesAvg()
-                cell.iconImage.image = UIImage(systemName: "flame")
-            default:
-                cell.workoutCountLabel.text = CoreDataHelper.instance.retrieveStatsData(key: categoryDictionary[category]!)
-                let iconImage = categories![indexPath.row].icon
-                cell.iconImage.image = UIImage(named: iconImage)
+                case "Total Workouts":
+                    cell.iconImage.image = UIImage(systemName: "star")
+                    cell.workoutCountLabel.text = CoreDataHelper.instance.retrieveStatsData(key: "numWorkoutsTotal")
+                case "Avg Calories Burned":
+                    cell.workoutCountLabel.text = self.computeCaloriesAvg()
+                    cell.iconImage.image = UIImage(systemName: "flame")
+                default:
+                    cell.workoutCountLabel.text = CoreDataHelper.instance.retrieveStatsData(key: dbLookupDictionary[category]!)
+                    let iconImage = categories![indexPath.row].icon
+                    cell.iconImage.image = UIImage(named: iconImage)
             }
             
             return cell
@@ -150,7 +142,7 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     
     func loadUserName() -> String {
         let arr = CoreDataHelper.instance.fetchUserInfo()
-        let defaultName = "User"
+        let defaultName = "App User"
         
         if arr.capacity == 0 {
             return defaultName
@@ -160,7 +152,24 @@ class ProgressViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func computeCaloriesAvg() -> String {
-        return "0"
+        
+        var calories = 0
+        var workoutsTotal = 0
+        if let categories = categories {
+            for category in categories {
+                let name = category.categoryName
+                let cal = Int(category.calories)!
+                let numWorkouts = Int(CoreDataHelper.instance.retrieveStatsData(key: dbLookupDictionary[name]!))!
+                calories += (cal * numWorkouts)
+                workoutsTotal += numWorkouts
+                
+            }
+        }
+        if workoutsTotal == 0 {
+            return "0"
+        } else {
+            return "\(calories/workoutsTotal)"
+        }
     }
 
 }

@@ -58,6 +58,21 @@ class CoreDataHelper {
     }
     
     func saveUserInfo(data: String) {
+        //clear data
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserModel")
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if let resultsArray = results as? [UserModel] {
+                for data in resultsArray {
+                    managedContext.delete(data)
+                }
+            }
+            
+        } catch {
+            print(error)
+        }
+        
+        // save data
         let userInstance = UserModel(context: managedContext)
         userInstance.name = data
         do {
