@@ -23,6 +23,12 @@
 		DA864F8A244A9DFB002E3B2C /* workout_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DA864F89244A9DFB002E3B2C /* workout_data.json */; };
 		DA8E5195244CB09400F5411D /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E5194244CB09400F5411D /* ProgressCell.swift */; };
 		DA8E519A244CFDBE00F5411D /* WorkoutModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA8E5198244CFDBE00F5411D /* WorkoutModel.xcdatamodeld */; };
+		DAA7A430247955B100CF72FF /* simulator5.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA7A42D247955B100CF72FF /* simulator5.png */; };
+		DAA7A431247955B100CF72FF /* simulator3.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA7A42E247955B100CF72FF /* simulator3.png */; };
+		DAA7A432247955B100CF72FF /* simulator4.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA7A42F247955B100CF72FF /* simulator4.png */; };
+		DAA7A434247955B800CF72FF /* simulator2.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA7A433247955B800CF72FF /* simulator2.png */; };
+		DAA7A436247955C200CF72FF /* simulator1.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA7A435247955C200CF72FF /* simulator1.png */; };
+		DABF2433245F64A600D3C3FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DABF2432245F64A600D3C3FA /* README.md */; };
 		DAF5C715244F24E900DA5EE2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C714244F24E900DA5EE2 /* Category.swift */; };
 		DAF5C717244F3EB400DA5EE2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C716244F3EB400DA5EE2 /* Helpers.swift */; };
 		DAF5C719244FB59400DA5EE2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF5C718244FB59400DA5EE2 /* EditProfileViewController.swift */; };
@@ -48,6 +54,12 @@
 		DA864F89244A9DFB002E3B2C /* workout_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workout_data.json; sourceTree = "<group>"; };
 		DA8E5194244CB09400F5411D /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		DA8E5199244CFDBE00F5411D /* WorkoutModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutModel.xcdatamodel; sourceTree = "<group>"; };
+		DAA7A42D247955B100CF72FF /* simulator5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simulator5.png; path = ../../../simulator5.png; sourceTree = "<group>"; };
+		DAA7A42E247955B100CF72FF /* simulator3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simulator3.png; path = ../../../simulator3.png; sourceTree = "<group>"; };
+		DAA7A42F247955B100CF72FF /* simulator4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simulator4.png; path = ../../../simulator4.png; sourceTree = "<group>"; };
+		DAA7A433247955B800CF72FF /* simulator2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simulator2.png; path = ../../../simulator2.png; sourceTree = "<group>"; };
+		DAA7A435247955C200CF72FF /* simulator1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simulator1.png; path = ../../../simulator1.png; sourceTree = "<group>"; };
+		DABF2432245F64A600D3C3FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAF5C714244F24E900DA5EE2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DAF5C716244F3EB400DA5EE2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		DAF5C718244FB59400DA5EE2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +80,8 @@
 		DA5759FF243AC22D003DE33C = {
 			isa = PBXGroup;
 			children = (
+				DAA7A42C2479559700CF72FF /* Resources */,
+				DABF2432245F64A600D3C3FA /* README.md */,
 				DA575A0A243AC22D003DE33C /* workoutplus */,
 				DA575A09243AC22D003DE33C /* Products */,
 			);
@@ -133,6 +147,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		DAA7A42C2479559700CF72FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAA7A42E247955B100CF72FF /* simulator3.png */,
+				DAA7A435247955C200CF72FF /* simulator1.png */,
+				DAA7A42F247955B100CF72FF /* simulator4.png */,
+				DAA7A42D247955B100CF72FF /* simulator5.png */,
+				DAA7A433247955B800CF72FF /* simulator2.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,7 +219,13 @@
 			files = (
 				DA864F8A244A9DFB002E3B2C /* workout_data.json in Resources */,
 				DA575A18243AC235003DE33C /* LaunchScreen.storyboard in Resources */,
+				DAA7A430247955B100CF72FF /* simulator5.png in Resources */,
+				DABF2433245F64A600D3C3FA /* README.md in Resources */,
 				DA575A28243AD573003DE33C /* Assets.xcassets in Resources */,
+				DAA7A434247955B800CF72FF /* simulator2.png in Resources */,
+				DAA7A436247955C200CF72FF /* simulator1.png in Resources */,
+				DAA7A432247955B100CF72FF /* simulator4.png in Resources */,
+				DAA7A431247955B100CF72FF /* simulator3.png in Resources */,
 				DA575A13243AC22D003DE33C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
